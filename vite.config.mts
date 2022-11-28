@@ -8,7 +8,7 @@ import { createSvgPlugin } from '@kingyue/vite-plugin-vue2-svg'
 import { splitVendorChunkPlugin } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
-import Inspect from 'vite-plugin-inspect'
+// import Inspect from 'vite-plugin-inspect'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import SupportedBrowsers from 'vite-plugin-browserslist-useragent'
@@ -71,7 +71,7 @@ export default defineConfig({
       include: [path.resolve(__dirname, 'src/locales/**')],
     }),
     SupportedBrowsers(),
-    Inspect(),
+    // Inspect(),
   ],
   css: {
     devSourcemap: true,
