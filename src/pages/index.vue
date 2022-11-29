@@ -3,6 +3,6 @@
 </template>
 <route lang="json">
 {
-  "redirect": "homepage"
+  "redirect": "whatsapp-templates/preview"
 }
 </route>
