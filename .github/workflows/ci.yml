@@ -95,18 +95,18 @@ jobs:
       - name: Cypress PNPM Patch
         run: cp pnpm-lock.yaml package-lock.json
 
-      - name: Cypress
-        uses: cypress-io/github-action@v4
-        with:
-          install-command: echo
-          build: pnpm run build
-          start: pnpm run preview
-          record: true
-          command-prefix: '--'
-        env:
-          # pass the Dashboard record key as an environment variable
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          # pass GitHub token to allow accurately detecting a build vs a re-run build
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # pass the project ID from the secrets through environment variable
-          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+#      - name: Cypress
+#        uses: cypress-io/github-action@v4
+#        with:
+#          install-command: echo
+#          build: pnpm run build
+#          start: pnpm run preview
+#          record: true
+#          command-prefix: '--'
+#        env:
+#          # pass the Dashboard record key as an environment variable
+#          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+#          # pass GitHub token to allow accurately detecting a build vs a re-run build
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          # pass the project ID from the secrets through environment variable
+#          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
