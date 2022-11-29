@@ -1,8 +1,10 @@
 import service from '@/utils/request'
 
 export type WabaTemplateComponent = {
-  type: 'BODY' | 'HEADER' | 'BUTTONS' | string
+  type: 'BODY' | 'HEADER' | 'BUTTONS' | 'FOOTER' | string
   example?: object
+  buttons?:any[]
+  format?:string
 } & any
 
 export type WabaTemplate = {
@@ -11,8 +13,7 @@ export type WabaTemplate = {
   components: WabaTemplateComponent[]
   language: string
   name: string
-  namespace: string
-  rejected_reason: string
+  rejected_reason?: string|null
   status: string
 }
 

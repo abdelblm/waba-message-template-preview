@@ -1,6 +1,6 @@
 import { setupWorker, rest } from 'msw'
 import type { IUserData, Token } from '@/api/users'
-import type { WabaTemplate } from '@/api/waba_templates'
+import { waba_templates } from '@/mocks/waba_templates'
 
 const baseURL =
   import.meta.env.VITE_API_URL ||
@@ -54,88 +54,6 @@ const users = [
   },
 ]
 
-const waba_templates: WabaTemplate[] = [
-  {
-    id: 1,
-    category: 'TRANSACTIONAL',
-    components: [
-      {
-        example: {
-          body_text: [['Ci-joint votre devis']],
-        },
-        text: '**** {{1}}',
-        type: 'BODY',
-      },
-      {
-        example: {
-          header_handle: [
-            'https://itb.itinarea.com/storage/static/DIGISHARE%20-%20Produits.pdf',
-          ],
-        },
-        format: 'DOCUMENT',
-        type: 'HEADER',
-      },
-      {
-        buttons: [
-          {
-            text: "Oui, j'accepte",
-            type: 'QUICK_REPLY',
-          },
-          {
-            text: "Non, je n'accepte pas",
-            type: 'QUICK_REPLY',
-          },
-        ],
-        type: 'BUTTONS',
-      },
-    ],
-    language: 'en',
-    name: 'file_text_2buttons_yes_no_french',
-    namespace: 'e2a9fss3_20ss5_4ss8_9ss0_61fw2saadf87',
-    rejected_reason: 'NONE',
-    status: 'approved',
-  },
-  {
-    id: 2,
-    category: 'TRANSACTIONAL',
-    components: [
-      {
-        example: {
-          body_text: [['votre devis']],
-        },
-        text: '**** {{1}}',
-        type: 'BODY',
-      },
-      {
-        example: {
-          header_handle: [
-            'https://itb.itinarea.com/storage/static/DIGISHARE%20-%20Produits.pdf',
-          ],
-        },
-        format: 'DOCUMENT',
-        type: 'HEADER',
-      },
-      {
-        buttons: [
-          {
-            text: 'نعم أنا موافق',
-            type: 'QUICK_REPLY',
-          },
-          {
-            text: 'لست موافقا',
-            type: 'QUICK_REPLY',
-          },
-        ],
-        type: 'BUTTONS',
-      },
-    ],
-    language: 'en',
-    name: 'file_text_2buttons_yes_no_arabe',
-    namespace: 'e2a9fss3_20ss5_4ss8_9ss0_61fw2ssadf87',
-    rejected_reason: 'NONE',
-    status: 'approved',
-  },
-]
 export const worker = setupWorker(
   rest.get(url('/users/:id'), (req, res, ctx) => {
     return res(ctx.json({ id: 99, groups: [1] }))
