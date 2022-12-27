@@ -4,7 +4,7 @@ export type WabaTemplateComponent = {
   type: 'BODY' | 'HEADER' | 'BUTTONS' | 'FOOTER' | string
   example?: object
   buttons?: any[]
-  format?: string
+  text?: string
 } & any
 
 export type WabaTemplate = {
